@@ -1,8 +1,6 @@
 _[Download solution](solution.py)_
 
----
-title: Reverse Polish Notation
----
+# Reverse Polish Notation
 
 ## Phase 1: Addition
 
