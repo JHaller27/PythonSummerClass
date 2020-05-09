@@ -1,3 +1,5 @@
+_[Download solution](solution.py)_
+
 # Mail Merger
 
 ## Phase 1: Read CSV

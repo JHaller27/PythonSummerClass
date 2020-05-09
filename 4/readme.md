@@ -1,3 +1,5 @@
+_[Download solution](solution.py)_
+
 # CSV Math
 
 ## Phase 1: Read file
