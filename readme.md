@@ -8,7 +8,7 @@ _Each subfolder is named as an ordinal representing the order these tasks should
 
 _Click the Download buttons to download this site, including solutions._
 
-* [Project 1](1)
+* [Project 1: _4-Function Calculator_](1)
 * [Project 2](2)
 * [Project 3](3)
 * [Project 4](4)
