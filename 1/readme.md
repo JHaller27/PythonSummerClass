@@ -8,13 +8,13 @@ Reverse Polish Notation (RPN) is one way computers can do basic calculator opera
 
 > 1 + 2
 
-> <operand 1> <operation> <operand 2>
+> <operand 1> \<operation\> <operand 2>
 
 RPN works by reading the operands first, then performing some operation on them:
 
 > 1 2 +
 
-> <operand 1> <operand 2> <operation>
+> <operand 1> <operand 2> \<operation\>
 
 Thus, this is also called "post-fix" notation.
 
