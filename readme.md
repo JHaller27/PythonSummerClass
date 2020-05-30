@@ -1,6 +1,6 @@
-For more self-test puzzles, see [Project Euler](https://projecteuler.net/archives).
-
 For more learning resources, see [W3Schools Python Tutorials](https://www.w3schools.com/python/).
+
+For self-test challenges, see [Project Euler](https://projecteuler.net/archives).
 
 **Projects**
 
