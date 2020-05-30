@@ -4,7 +4,7 @@ _[Download solution](solution.py)_
 
 _**Objective:** Write a basic 4-function Reverse Polish Notation calculator._
 
-Reverse Polish Notation (RPN) is one way computers can do basic calculator operations. We tend to work in "in-fix" notation, meaning the operation goes between the operands:
+Reverse Polish Notation (RPN) is one way computers can do basic calculator operations. We tend to work in "in-fix" notation, meaning the operation goes in between the operands:
 
 > 1 + 2
 
