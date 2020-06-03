@@ -141,14 +141,13 @@ text = input("Give me a number: ")
 one_more = text + 1
 print(one_more)
 ```
-...gives you this...
-> **Give me a number:** _123_
->
-> **1231**
+...will throw an error (a TypeError).
 
-It just added the "1" to the end of the text.
+An interesting thing to note is that the error messages says that you can't **concatenate** an int to a str.
+Concatenate means to add a string on to the end of another string. For lists, you _append_ values to the end.
+The terms are _technically_ distinct, but "concatenate" vs "append" vs "add on to the end" pretty much all mean pretty much the same thing.
 
-To make this _actually_ work, you need to tell Python that it's a number, not text...
+To make this work, you need to tell Python that it's a number, not text...
 
 ```python
 text = input("Give me a number: ")
