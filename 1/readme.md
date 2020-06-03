@@ -160,6 +160,10 @@ print(one_more)
 >
 > **124**
 
+Two important things to note:
+* If `text` is not a number (e.g. `'abc'`), `int()` will throw a ValueError.
+* `text` may start or end with whitespace, `int()` will automatically strip it off.
+
 Okay, so I gave you the code for this one... It's pretty boring anyway. The next step is where it becomes useful!
 
 ### Add numbers together
