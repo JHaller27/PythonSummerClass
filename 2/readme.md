@@ -22,7 +22,7 @@ I've attached a .zip file with the spreadsheets (they're .csv files instead of .
 
 ## Phase 1: Read file
 
-**Objective**: Read a file with a list of numbers and print the sum.
+**Objective**: Read `data/phase_1.txt` which contains a list of numbers, and print the sum of those numbers.
 
 > Tip: Use the provided solution to check your answer.
 
@@ -72,8 +72,108 @@ Now you can `do_something()` with those lines and the file is open only for a sh
 
 ## Phase 2: Read CSV
 
+**Objective**: Read a CSV, and calculate the net profit.
 
-_Resource: https://docs.python.org/3/library/csv.html - Python documentation on the built-in CSV library_
+Read data from `data/phase_2.csv` using the CSV library,
+and calculate the net profit.
+
+_Resource: https://docs.python.org/3/library/csv.html - Python documentation on the builtin `csv` library._
+
+---
+
+A CSV file (which stands for "Comma-Separated Values" file) is really no different from a .txt file.
+However, it IS special in that it has a consistent, well-known format.
+
+Computers are really good at handling data that is **consistent** (because it can repeat one process many times, very fast),
+and the "**well-known**" means that there's probably someone out there that has written helpful code for us.
+
+In fact, CSV files are so well known, that Python has a builtin library (cleverly called `csv`) for handling them.
+
+The csv library has Readers and Writers (these are "Classes", if you don't know what that means, feel free to check them out on your own, but the details don't matter for this project).
+In this project, we'll only use Readers, but similar concepts will apply to Writers.
+
+csv.Readers accept an already-opened file, and do some fancy things for us in the background. For example:
+
+```python
+import csv
+
+# Read the csv file, and store each row in a list
+rows = []
+with open(filename) as fin:
+    reader = csv.Reader(fin)  # Btw, csv.Reader is a Class
+    for row in reader:
+        rows.append(row)
+
+# Do_something with each cell
+for row in rows:
+    for cell in row:
+        do_something(cell)  # Each cell is a string
+```
+
+We could easily write this ourselves by reading line-by-line, and using `line.split(',')` before appending to the list of rows, but it's kinda nice that we don't have to.
+Plus, sometimes CSV files have slightly different formats that this library handles well (though this project will only use the default CSV format to keep things simple).
+
+Here's where the csv library becomes super useful: `csv.DictReader`. The DictReader works exactly the same as a Reader, but instead of producing a list of rows, which are _lists of cells_ (as in the `csv.Reader` example),
+each row is a _dict of cells_ where the keys are the columns (we can set the column names ourselves, or let the `DictReader` read them from the first row).
+
+For example...
+```python
+import csv
+
+# Read the csv file, and store each row in a list
+rows = []
+with open(filename) as fin:
+    reader = csv.DictReader(fin)
+    for row in reader:
+        rows.append(row)
+
+# Do_something with each row's cells
+for row in rows:
+    do_something(row['Column 1'], row['Column 2'], ...)
+```
+
+Clearly, there are better ways for `do_something()` to work, but this should illustrate that each `row` is a _dict_ and you can access each cell by its column name.
+
+It's up to you to decide the best to improve `do_something()` but here are some suggestions.
+
+1. Pass the entire row, and let `do_something()` sort it out.
+
+```python
+# Do_something with each row
+for row in rows:
+    do_something(row)
+
+def do_something(row):
+    return row['Column 1'] + row['Column 2'] - row['Column 3']
+```
+
+This is nice because we only have to pass the row (1 parameter), but if we want to run `do_something()` on its own for testing, we have to construct the `row` dict param.
+
+2. The function expects each cell separately (as in the example), but we can _dereference_ the row.
+
+```python
+# Do_something with each row
+for row in rows:
+    do_something(**row)
+    # We use ** for dicts (matching params by name)
+    #  but we can do something similar with tuples using *
+    #  (matching params by position/order)
+
+def do_something(column1, column2, column3):
+    return oolumn1, column2, column3
+```
+
+This is nice because testing is slightly easier because we can pass in each parameter and know exactly what it is without needing to build a dict first
+(e.g. `do_something(1, 2, 3)`).
+However, it's not scalable - e.g. what happens if we have 20 columns? - and it requires that the column names follow Python variable naming rules (e.g. 'Column1' is fine but 'Column 1' would not work for this example).
+
+For this particular project, either option will work equally well.
+So use the second option if you want to experiment, but option 1 generally works better.
+
+Pro tip: If you ever have a function that has way too many parameters, passing in a dict (or Objects) can clean it up significantly.
+Don't do this too often - it's very rare that this is helpful, because usually the function should instead be split into more, smaller functions.
+(In fact, CS/math theory says that _any_ program can be minimally written as a composition of functions that accept 1-2 parameters.
+So it's always _possible_ to simplify functions that need 3+ parameters).
 
 ## Phase 3: Sanitize
 
