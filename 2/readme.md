@@ -166,7 +166,7 @@ for row in rows:
     #  (matching params by position/order)
 
 def do_something(column1, column2, column3):
-    return oolumn1, column2, column3
+    return column1, column2, column3
 ```
 
 This is nice because testing is slightly easier because we can pass in each parameter and know exactly what it is without needing to build a dict first
