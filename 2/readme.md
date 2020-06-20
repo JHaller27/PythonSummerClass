@@ -7,7 +7,7 @@ This morning you received an email from Robin in marketing:
 
 > Hey!
 >
-> We're talking about running an ad and we want to include how much our clients' assets have increased from our services over the past 5 years (2014-2019, since 2020 isn't over and numbers will be weird anyway).
+> We're talking about running an ad and we want to include how much our clients' assets have increased from our services per year over the past 5 years (2014-2019, since 2020 isn't over and numbers will be weird anyway).
 Abby is working on finding a baseline - the average amount people's assets increase for comparison,
 and Dayna found a bunch of spreadsheets of customer data
 (with personal info redacted, mostly just the names have been converted into random ids).
@@ -231,8 +231,8 @@ for file in list_files('/home/jhaller/Documents/project2/data/reports'):
 _[Code credit](https://stackoverflow.com/questions/3207219/how-do-i-list-all-files-of-a-directory)_
 
 To clarify, what we're looking for is this:
-* Read each file, and find the sum of all transactions in a year in the range 2014-2019
-* Calculate and print the average of these sums
+* For each file, for each year, find the sum of all transactions
+* Calculate and print the average of all of these sums, i.e. the sum of each year's sum for each file
 
 As always, feel free to run the solution code to check your results.
 
