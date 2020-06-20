@@ -175,7 +175,5 @@ Don't do this too often - it's very rare that this is helpful, because usually t
 (In fact, CS/math theory says that _any_ program can be minimally written as a composition of functions that accept 1-2 parameters.
 So it's always _possible_ to simplify functions that need 3+ parameters).
 
-## Phase 3: Sanitize
-
-## Phase 4: Math!
+## Phase 3: Lots of files + math!
 
