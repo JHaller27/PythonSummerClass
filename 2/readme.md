@@ -245,7 +245,7 @@ To clarify, what we're looking for is this:
 As always, feel free to run the solution code to check your results.
 
 You may also consider working incrementally:
-* Open one file (one way is to use `filename = next(list_files(...)))` to get only the first file)
+* Open one file (one way is to use `filename = next(list_files(...))` to get only the first file)
 * List/print all transactions in the year range
 * Find the sum of those transactions
 * Repeat for a second file, and find the average
