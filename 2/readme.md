@@ -170,10 +170,13 @@ However, it's not scalable - e.g. what happens if we have 20 columns? - and it r
 For this particular project, either option will work equally well.
 So use the second option if you want to experiment, but option 1 generally works better.
 
-Pro tip: If you ever have a function that has way too many parameters, passing in a dict (or Objects) can clean it up significantly.
-Don't do this too often - it's very rare that this is helpful, because usually the function should instead be split into more, smaller functions.
+Pro tip: If you ever have a function that has way too many parameters, passing in a dict can clean it up significantly.
+It's very rare that this is helpful, because the function usually should instead be split into more, smaller functions.
 (In fact, CS/math theory says that _any_ program can be minimally written as a composition of functions that accept 1-2 parameters.
-So it's always _possible_ to simplify functions that need 3+ parameters).
+So it's always _possible_ to simplify functions that need 3+ parameters.
+6 parameters is usually the point at which you should think about splitting the function).
+
+However, passing Objects (instead of dicts) is very common, very clean, and generally preferred with newer practices - called Object-Oriented Design (OOD).
 
 ## Phase 3: Lots of files + math!
 
