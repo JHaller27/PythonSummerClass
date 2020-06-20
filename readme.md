@@ -23,8 +23,7 @@ Even copy+paste is okay, real-world programmers do it all the time!
 
 _Work-in-progress_
 
-* [Project 2](2)
+* [Project 2: CSV Math](2)
 * [Project 3](3)
 * [Project 4](4)
 * [Project 5](5)
-* [Project 6](6)
