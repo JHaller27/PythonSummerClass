@@ -20,10 +20,10 @@ Trust me, looking at a solution is not cheating - you still need to understand t
 Even copy+paste is okay, real-world programmers do it all the time!
 
 * [Project 1: _4-Function Calculator_](1)
+* [Project 2: _CSV Math_](2)
 
 _Work-in-progress_
 
-* [Project 2: _CSV Math_](2)
 * [Project 3](3)
 * [Project 4](4)
 * [Project 5](5)
