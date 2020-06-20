@@ -77,7 +77,7 @@ Now you can `do_something()` with those lines and the file is open only for a sh
 Read data from `data/phase_2.csv` using the CSV library,
 and calculate the net profit.
 
-_Resource: https://docs.python.org/3/library/csv.html - Python documentation on the builtin `csv` library._
+_Resource: [https://docs.python.org/3/library/csv.html](https://docs.python.org/3/library/csv.html) - Python documentation on the builtin `csv` library._
 
 ---
 
