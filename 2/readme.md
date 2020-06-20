@@ -7,14 +7,16 @@ This morning you received an email from Robin in marketing:
 
 > Hey!
 >
-> We're talking about running an ad and we want to include how much our clients' assets increase from our services.
+> We're talking about running an ad and we want to include how much our clients' assets have increased from our services over the past 5 years (2014-2019, since 2020 isn't over and numbers will be weird anyway).
 Abby is working on finding a baseline - the average amount people's assets increase for comparison,
 and Dayna found a bunch of spreadsheets of customer data
 (with personal info redacted, mostly just the names have been converted into random ids).
-> 
+>
 > As you can imagine, there are a LOT of files to go through,
 so I'm really hoping your programming skills will come in useful here!
 I've attached a .zip file with the spreadsheets (they're .csv files instead of .xlsx, I hope that's okay).
+Also, the transactions in each file aren't sorted at all.
+Normally we can sort by date, but Dayna says the UI is buggy and it won't let her download them sorted.
 >
 > Let me know if there's anything I can help you with. Thanks a ton!<br/>
 > &nbsp;&nbsp;&nbsp;&nbsp;Robin
@@ -180,3 +182,63 @@ However, passing Objects (instead of dicts) is very common, very clean, and gene
 
 ## Phase 3: Lots of files + math!
 
+**Objective**: Read from many CSV files, find the net profit for each "client file", then find the average net profit overall.
+
+This is more of a real-world example.
+Now that you can read files, and handle CSV files, let's do something "interesting" with it.
+
+The scenario described at the start of these instructions say that
+you'll have a .zip file containing MANY CSV files.
+Each CSV file represents client data (with personally-identifiable information redacted).
+
+Each CSV file is named as 'report-{year}-{uid}.csv' where {year} is the year the client's record starts, and {uid} is the client's unique id (instead of their name).
+
+Each client file has 4 columns - year, month, day, and amount.
+Year/month/day represents the date of a transaction,
+and the amount is the amount of that transaction.
+Negative transactions represent financial loss (a purchase, etc.),
+and positive transactions represent financial gains (income, etc.).
+
+Not all of this information is necessary, e.g. the name of the file doesn't much matter, and we only care about the year the transaction was made (the exact day doesn't matter).
+
+You're only interested in accumulating transactions occurring during the years 2014-2019 (inclusive).
+
+Since you don't know the exact names of the files
+and it would be ridiculous to expect you to type them all out,
+here's a function that will list all files in a given directory
+(plus example usage).
+Copy+paste this at the top of your program, or use it as a base to start from.
+
+```python
+import os
+
+
+def list_files(directory_name):
+    '''
+    Generator function that returns the names of all files in a directory
+    '''
+    for f in os.listdir(directory_name):
+        full_path = os.path.join(directory_name, f)
+        if os.path.isfile(full_path):
+            yield full_path
+
+
+# Example usage
+for file in list_files('/home/jhaller/Documents/project2/data/reports'):
+    do_something_with(file)
+```
+
+_[Code credit](https://stackoverflow.com/questions/3207219/how-do-i-list-all-files-of-a-directory)_
+
+To clarify, what we're looking for is this:
+* Read each file, and find the sum of all transactions in a year in the range 2014-2019
+* Calculate and print the average of these sums
+
+As always, feel free to run the solution code to check your results.
+
+You may also consider working incrementally:
+* Open one file (one way is to use `filename = next(list_files(...)))` to get only the first file)
+* List/print all transactions in the year range
+* Find the sum of those transactions
+* Repeat for a second file, and find the average
+* Replace "handle file 1 + handle file 2" with for-looping over all files
