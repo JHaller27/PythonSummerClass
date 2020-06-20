@@ -24,6 +24,8 @@ Normally we can sort by date, but Dayna says the UI is buggy and it won't let he
 
 ## Phase 1: Read file
 
+_[Download data file](data/phase_1.txt)_
+
 **Objective**: Read `data/phase_1.txt` which contains a list of numbers, and print the sum of those numbers.
 
 > Tip: Use the provided solution to check your answer.
@@ -73,6 +75,8 @@ This will read each line of the file, insert it into the `lines` list, then clos
 Now you can `do_something()` with those lines and the file is open only for a short time, which is generally best, especially if you need to force-kill the program in the middle (which often happens while developing).
 
 ## Phase 2: Read CSV
+
+_[Download data file](data/phase_2.csv)_
 
 **Objective**: Read a CSV, and calculate the net profit.
 
@@ -181,6 +185,8 @@ So it's always _possible_ to simplify functions that need 3+ parameters.
 However, passing Objects (instead of dicts) is very common, very clean, and generally preferred with newer practices - called Object-Oriented Design (OOD).
 
 ## Phase 3: Lots of files + math!
+
+_[Download zip file](data/phase_3_reports.zip)_
 
 **Objective**: Read from many CSV files, find the net profit for each "client file", then find the average net profit overall.
 
