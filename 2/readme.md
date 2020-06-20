@@ -24,7 +24,7 @@ Normally we can sort by date, but Dayna says the UI is buggy and it won't let he
 
 ## Phase 1: Read file
 
-_[Download data file](data/phase_1.txt)_
+_[Download data file](data/phase_1.txt) - may need to follow link then click something like "Save page as..."_
 
 **Objective**: Read `data/phase_1.txt` which contains a list of numbers, and print the sum of those numbers.
 
