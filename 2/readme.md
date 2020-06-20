@@ -1,5 +1,7 @@
 _[Download solution](solution.py)_
 
+_[Go to data files](data)_
+
 # CSV Math
 
 So here's the scenario: you work for a small personal financial planning company.
